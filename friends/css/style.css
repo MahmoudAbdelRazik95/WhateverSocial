@@ -1,0 +1,219 @@
+/* 
+ * Embedresponsively.com helps build responsive embed codes for embedding rich third-party media 
+ * into responsive web pages. The code here is based on research and work by Theirry Koblentz,
+ * Anders Andersen and Niklaus Gerber. Created and maintained by @jeffehobbs.
+ */
+.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+/* Louis' Styles */
+
+body {
+  font-family:'Open Sans';
+  background:#98d;
+}
+#top-bar {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:80px;
+  background:#8f7ae3;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  z-index:1;
+}
+.search {
+  position:absolute;
+  margin:auto;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:500px;
+  height:50px;
+  border-radius:50px;
+  background:rgba(0,0,0,0.05);
+  box-shadow:inset 0 0 10px rgba(0,0,0,0.1);
+  box-sizing:border-box;
+}
+.search input {
+  padding:0;
+  padding-left:20px;
+  width:100%;
+  height:50px;
+  line-height:45px;
+  border:0;
+  color:#fff;
+  background:none;
+  font-size:16px;
+}
+.search input:focus {
+  outline:0;
+}
+.search input::-webkit-input-placeholder {
+  font-family:'Open Sans';
+  font-weight:300;
+  color:#fff;
+}
+.profile,
+.new-post{
+  position:absolute;
+  margin:auto;
+  top:0;
+  left:0;
+  right:600px;
+  bottom:0;
+  width:50px;
+  height:50px;
+  border-radius:6px;
+  background:rgba(0,0,0,0.05);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  cursor:pointer;
+  background:url(https://s3.amazonaws.com/uifaces/faces/twitter/felipebsb/128.jpg) 50% 50% / cover no-repeat;
+  box-sizing:border-box;
+}
+.new-post{
+  left:600px;
+  right:0;
+  max-width:64px;
+  max-height:64px;
+  background:rgba(0,0,0,0.4);
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAACHElEQVR4XuXb/03DMBCG4e82YARGKBNQJqGdADERZQOYANiAbsAGlAkOuWoqQpv6153js/NvE6nvg+3EAQiNHMz8AGAFYAHgBcAjEX358sh3goXPmfnpEP/36+4A3BHR56UG8wAT8UOzF8E0gCc+CMEsQGC8F8EkQGT8RQRzAInxkwimAJjZ3ebcip9zjBZGUwCumpk3AO5zBAAcEcwBCCPcmAQQRHitFuAw32+JaD013AWmw65KgH+L3UYRYVsdwMRKr4XwWBWA5zYnjfBMRKtqAALv8VIIWyJy22ZUARAYP6yFuQhbAEsics8C8wNExuci/AC4HuJnB0iMT0Vw8e4nP3pBMtsUyIyPRTgbP9sIEIqPQXgnIreHODmKjwDh+CCEat4JKsVnIRQbAcrxyQhFAJh5CeAtcw8fevl6ar7PsgYws3vicvFXoQUZ5+0fb2OuVx0Btcer3gYtxKsBWIlXAbAULw5gLV4UwGK8GIDVeBEAy/HZANbjswAKx38QkXucFj+SngQLx4/e4UkLRAO0FB89BVqLjwJoMT4YoNX4IICW470ArcdfBOghfhKgl/izAD3FnwD0Fj8C6DH+CNBr/B6g5/gB4LvQLy1Ud3Wpu0Q3Ajj14ojrqowfRoA2QLXxJQCqjtcGqD5eE8BEvBaAmXgNAFPx0gDm4iUBTMZLAZiNlwAwHZ8LYD4+B8D97e0i5N/TI/YLs5z6C9XImUBvMbYLAAAAAElFTkSuQmCC');
+  background-position:50% 50%;
+  background-repeat:no-repeat;
+  background-size:60%;
+}
+#sub-menu {
+  position:fixed;
+  margin:auto;
+  top:90px;
+  left:0;
+  right:0;
+  bottom:10px;
+  max-width:950px;
+  display:none;
+}
+#left-bar,
+#right-bar{
+  width:170px;
+  height:100%;
+  float:left;
+  background:rgba(255,255,255,0.1);
+}
+#right-bar {
+  float:right;
+}
+
+#main-window {
+  position:absolute;
+  margin:auto;
+  top:80px;
+  left:0;
+  right:0;
+  max-width:650px;
+  width:95%;
+  padding:10px 0;
+  /* background:#fff; */
+}
+
+
+.post {
+  margin:20px auto 60px;
+  width:90%;
+  background:#fff;
+  border-radius:4px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  overflow:hidden;
+}
+
+.post:hover {
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.post .user {
+  padding:10px;
+  background:#f9f9f9;
+  overflow:hidden;
+}
+.post .user .user-img {
+  margin-right:10px;
+  width:35px;
+  height:35px;
+  float:left;
+  border-radius:6px;
+  background:#444;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  overflow:hidden;
+}
+.post .user .user-info {
+  margin-right:10px;
+  width:calc(100% - 190px);
+  height:35px;
+  line-height:18px;
+  float:left;
+  color:#98d;
+}
+.user-name { cursor: pointer; cursor: hand; }
+.post .user .user-info .user-name:hover{
+  color:#1ab188;
+  opacity:1.5;
+
+}
+.post .user .user-info .post-date {
+  font-size:13px;
+  color:#444;
+}
+.post .user .actions {
+  float:right;
+}
+.post .user .actions span {
+  margin-right:10px;
+  width:35px;
+  height:35px;
+  float:left;
+  display:block;
+  cursor:pointer;
+  overflow:hidden;
+  background-size:80%;
+  background-position:50% 50%;
+  background-repeat:no-repeat;
+  opacity:0.2;
+  -webkit-transition: 0.25s opacity ease-in-out;
+  transition:0.25s opacity ease-in-out;
+}
+.post .user .actions span:hover {
+  opacity:1;
+}
+.post .user .actions span:last-child{
+  margin-right:0;
+}
+.post .user .actions span.heart {
+  background-image:
+  url(../img/like.png);
+}
+.post .user .actions span.hearted {
+  background-image:
+          url(../img/liked.png);
+  opacity:1;
+}
+
+
+
+.post .content {
+  padding:20px;
+  font-size:16px;
+  line-height:22px;
+  font-family:'Helvetica Neue';
+  overflow:hidden;
+}
+.post .media{
+  margin:0 20px 20px;
+}
+.post .media img {
+  border-radius:4px;
+  width:100%;
+}
+.post .media iframe {
+  border-radius:4px;
+}

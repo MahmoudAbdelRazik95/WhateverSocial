@@ -1,0 +1,113 @@
+
+<HTML>
+<!--Page EDIT PROFILE-->
+<Head>
+<Title> Edit Profile </Title>
+<link href="style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript">
+function validateForm() {
+var oldpw= document.getElementById("pwold").value;
+if(oldpw==null || oldpw==""||oldpw.trim()==""{  <!--Handle a string of spaces-->
+alert ("please enter your current password");
+return false;
+}
+
+var newpw= document.getElementById("pwnew").value;
+var newpw2= document.getElementById("pwnew2").value;
+if(newpw==null || newpw==""||newpw2==null||newpw2==""|| newpw.trim()==""|| newpw2.trim()=="") <!--Handle a string of spaces-->
+{
+alert("New Password fields are empty !")
+return false;
+}
+var comp=newpw.localeCompare(newpw2);
+if(comp!=0){  
+alert ("The new Password fields don't match");
+return false }
+
+return true;
+}		
+</script>
+
+</Head>
+
+<Body>
+<h1>Edit your profile</h1>
+<div id="div1">
+<form action="php/edit.php" id="form" method="POST">
+<p>Edit First Name:    
+
+<input type="text" name="fname" id="fname" class="box">
+</p>
+
+<p>Edit Last Name:
+
+<input type="text" name="lname" id="lname" class="box">
+</p>
+
+<p>Edit Nickname:
+
+<input type="text" name="nickname" id="nickname" class="box">
+</p>
+
+<p>Edit E-mail:
+
+<input type="text" name="email" id="email" class="box">
+</p>
+
+<p>Edit Hometown:
+
+<input type="text" name="hometown" id="hometown" class="box">
+</p>
+
+<p>Enter Marital Status:
+
+<input type="text" name="maritalstatus" id="maritalstatus" class="box">
+</p>
+
+
+
+<p>Edit Bio:
+
+<input type="text" name="bio" id="bio" class="box">
+</p>
+<br/>
+<button type="submit" name="submit" value="Submit" class="button1">Submit</button>
+
+</form>
+</div>
+
+<div id="div2">
+<form action="php/changepw.php" id="forma" method="POSt" onsubmit="return validateForm()">
+<p>Edit Password:</p>
+<br/>
+<p>Current Password:  <input type="password" name="pwold" id="pwold" class="box2"></p>
+
+<p>New Password:       <input type="password" name="pwnew" id="pwnew" class="box2"></p>
+<p>Confirm New Password: <input type="password" name="pwnew2" id="pwnew2" class="box2"></p>
+<br/>
+<button type="submit" name="action" value="update" class="button2">Update</button>
+</div>
+
+</form>
+
+<form action="php/pp.php" method="post" enctype="multipart/form-data">
+    <p>Change your Profile Picture:</p>
+    <input type="file" name="image" id="image">
+    <input type="submit" value="Upload Image" name="submit">
+</form>
+
+
+<form action="php/remove.php" method="post">
+    <button name="remove" value="remove">Remove Profile Picture</button>
+</form>
+</Body>
+
+
+
+
+
+
+
+
+
+</HTML>

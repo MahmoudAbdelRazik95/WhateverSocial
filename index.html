@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Log in / Sign up</title>
+
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+      <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/custom-inputs.css">
+  <link rel="stylesheet" href="css/bootstrap-datepicker3.standalone.min.css">
+
+
+</head>
+
+<body>
+<div style="text-align: center;margin-top: 20px;margin-bottom: 20px"><img src="img/logoFull.png"  height="150" width="150"></div>
+  <div class="container">
+  <div class="container-forms">
+
+    <div class="container-info"id="box2">
+      <div class="info-item"id="box3">
+        <div class="table">
+          <div class="table-cell">
+            <p>
+              Have an account?
+            </p>
+            <div class="btns">
+              Log in
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="info-item">
+        <div class="table">
+          <div class="table-cell">
+            <p>
+              Don't have an account?
+            </p>
+            <div class="btns">
+              Sign up
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-form"id="box">
+      <div class="form-item log-in">
+        <div class="table">
+          <div class="table-cell">
+            <form id="logForm" method="post"  >
+            <input name="Username" placeholder="Username" type="text" id="usernamelog"class="inputs" />
+              <input name="Password" placeholder="Password" type="Password" id="passwordlog" class="inputs"/>
+            <div class="btns" id="btnsLog">
+              Log in
+            </div>
+              </form>
+          </div>
+        </div>
+      </div>
+      <div class="form-item sign-up">
+        <div class="table">
+          <div class="table-cell">
+              <form id="regForm" method="post">
+
+
+            <input id="email" name="email" placeholder="Email" type="email"class="inputs" />
+
+              <input id="first-name" name="first-name" placeholder="First Name" type="text" class="inputs" />
+                <input id="last-name" name="last-name" placeholder="Last Name" type="text"class="inputs" />
+
+              <input id="password"name="password" placeholder="Password" type="Password" class="inputs"/>
+                <input type="text" id="dob" placeholder="Date of Birth" name="dob"class="inputs">
+              <div style="text-align: center;"id="genderblock">  <span class="fh-radio">
+    <input type="radio" id="male" name="myradiogroup">
+    <label for="male">Male</label>
+</span>
+                <span class="fh-radio">
+    <input type="radio" id="female" name="myradiogroup">
+    <label for="female">Female</label>
+</span></div>
+
+                  <div class="btns" id="regBtn">
+                    Sign Up
+                  </div>
+
+              </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+      <script src="js/index.js"></script>
+  <script src="dist/sweetalert.min.js"></script>
+  <script src="js/wow.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="dist/sweetalert.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script src="js/bootstrap-datepicker.min.js"></script>
+
+</body>
+</html>
